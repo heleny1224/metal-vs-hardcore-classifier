@@ -1,0 +1,29 @@
+# Training configuration
+data:
+  input_dir: "./data_music"
+  output_dir: "./data_split"
+  num_segments: 60
+  sample_rate: 44100
+  duration: 5500  # ms
+  channels: 2
+  n_mels: 64
+  n_fft: 1024
+
+training:
+  epochs: 10
+  batch_size: 16
+  learning_rate: 0.001
+  validation_split: 0.1
+  test_split: 0.2
+  random_state: 42
+
+model:
+  num_classes: 2
+  dropout: 0.25
+  fc_dropout: 0.5
+  gru_hidden_size: 68
+
+output:
+  weights_dir: "./weights"
+  save_best: true
+  save_latest: true
